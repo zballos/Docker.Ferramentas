@@ -4,9 +4,11 @@
 
 Se quiser manter uma network default, execute o comando abaixo:
 
-``` bash
-docker create network dev_network
+``` powershell
+docker network create dev_network
 ```
+
+Referência: [docker network create](https://docs.docker.com/engine/reference/commandline/network_create/)
 
 E nos arquivos `docker-compose.yml`, ficará o trecho abaixo:
 
