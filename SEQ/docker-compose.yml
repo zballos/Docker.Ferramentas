@@ -1,0 +1,26 @@
+version: '3.8'
+
+networks: 
+  default:
+    external: 
+      name: dev_network
+    
+services:
+    seq:
+        container_name: seq
+        image: datalust/seq:latest
+        ports:
+        - "5341:80"
+        environment:
+          - "ACCEPT_EULA=Y"
+        volumes: 
+        - seq_data:/data
+        deploy:
+         resources:
+           limits:
+             cpus: "0.50"
+             memory: "500M"
+        restart: unless-stopped
+
+volumes:
+    seq_data: {}
